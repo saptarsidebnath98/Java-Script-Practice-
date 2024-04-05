@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Learning</title>
+</head>
+<body>
+    <button>Press here to get result</button>
+    <script>
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("onclick",(event)=>{
+            //p.textContent = "p";
+            console.log(event);
+        })
+        const p = document.createElement("p");
+
+       document.body.appendChild(p);
+        p.textContent = "";
+
+        
+        function Player(name, age){
+            this.name = name;
+            this.age = age;
+            this.info = function(){
+                return `Player name: ${this.name}, Player age: ${this.age}`;
+            }
+        }
+        const Virat = new Player("Virat Kohli", 34);
+        const Dhoni = new Player("Mahendra Singh Dhoni", 42);
+        //console.log(Virat.age);
+        //console.log(Dhoni.info());
+
+        
+    </script>
+</body>
+</html>
