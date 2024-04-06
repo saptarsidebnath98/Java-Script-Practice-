@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protoype</title>
+</head>
+<body>
+    <script>
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.sayHello = function(){
+            return `The name of the person is ${this.name}.`;
+        }
+        function Player(name, marker){
+            this.name = name;
+            this.marker = marker;
+        }
+
+        Player.prototype.getMarker = function(){
+            return `The Marker of ${this.name} is ${this.marker}.`;
+        }
+
+        //console.log(Object.getPrototypeOf(Player.prototype));
+
+        Object.setPrototypeOf(Player.prototype, Person.prototype);
+        //console.log(Object.getPrototypeOf(Player.prototype));
+
+        const player1 = new Player("Saptarsi", "X");
+        const player2 = new Player("Rohit", "O");
+
+        console.log(player1.sayHello());
+        console.log(player2.sayHello());
+
+        console.log(player1.getMarker());
+        
+    </script>
+</body>
+</html>

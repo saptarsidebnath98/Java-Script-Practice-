@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Constructor Learning</title>
-</head>
-<body>
-    <button>Press here to get result</button>
+  </head>
+  <body>
     <script>
-        const btn = document.querySelector("button");
+      function Player(name, age) {
+        this.name = name;
+        this.age = age;
+        this.info = function () {
+          return `Player name: ${this.name}, Player age: ${this.age}`;
+        };
+      }
+      const Virat = new Player("Virat Kohli", 34);
+      const Dhoni = new Player("Mahendra Singh Dhoni", 42);
+      // console.log(Virat.age);
+      // console.log(Dhoni.info());
+      //console.log(Object.getPrototypeOf(Virat) === Player.prototype);
 
-        btn.addEventListener("onclick",(event)=>{
-            //p.textContent = "p";
-            console.log(event);
-        })
-        const p = document.createElement("p");
+      Player.prototype.sayHello = function () {
+        return `Player ${this.name} said hello to everyone!`;
+      };
 
-       document.body.appendChild(p);
-        p.textContent = "";
+      //console.log(Virat.sayHello());
+      //console.log(Dhoni.sayHello());
+      //console.log(Object.getPrototypeOf(Virat));
 
-        
-        function Player(name, age){
-            this.name = name;
-            this.age = age;
-            this.info = function(){
-                return `Player name: ${this.name}, Player age: ${this.age}`;
-            }
-        }
-        const Virat = new Player("Virat Kohli", 34);
-        const Dhoni = new Player("Mahendra Singh Dhoni", 42);
-        //console.log(Virat.age);
-        //console.log(Dhoni.info());
+      // Player.prototype.__proto__
+      //Object.getPrototypeOf(Player.prototype) === Object.prototype; // true
 
-        
+      // Output may slightly differ based on the browser
+      //console.log(Virat.valueOf()); // Output: Object { name: "steve", marker: "X", sayName: sayName() }
+
+      //for(let key in Virat){
+          //console.log(key + " : " + Virat[key]);
+      //}
+
+      console.log(Math.PI);
     </script>
-</body>
+  </body>
 </html>
