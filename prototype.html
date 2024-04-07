@@ -1,43 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Protoype</title>
-</head>
-<body>
+  </head>
+  <body>
+      <h3>Cheack the console-----------></h3>
     <script>
-        function Person(name, age){
-            this.name = name;
-            this.age = age;
-        }
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
 
-        Person.prototype.sayHello = function(){
-            return `The name of the person is ${this.name}.`;
-        }
-        function Player(name, marker){
-            this.name = name;
-            this.marker = marker;
-        }
+      Person.prototype.sayHello = function () {
+        return `The name of the person is ${this.name}.`;
+      };
+      function Player(name, marker) {
+        this.name = name;
+        this.marker = marker;
+      }
 
-        Player.prototype.getMarker = function(){
-            return `The Marker of ${this.name} is ${this.marker}.`;
-        }
+      Player.prototype.getMarker = function () {
+        return `The Marker of ${this.name} is ${this.marker}.`;
+      };
 
-        //console.log(Object.getPrototypeOf(Player.prototype));
+      //console.log(Object.getPrototypeOf(Player.prototype));
 
-        Object.setPrototypeOf(Player.prototype, Person.prototype);
-        //console.log(Object.getPrototypeOf(Player.prototype));
+      Object.setPrototypeOf(Player.prototype, Person.prototype);
+      //console.log(Object.getPrototypeOf(Player.prototype));
 
-        const player1 = new Player("Saptarsi", "X");
-        const player2 = new Player("Rohit", "O");
+      const player1 = new Player("Saptarsi", "X");
+      const player2 = new Player("Rohit", "O");
 
-        console.log(player1.sayHello());
-        console.log(player2.sayHello());
+      //console.log(player1.sayHello());
+      // console.log(player2.sayHello());
 
-        console.log(player1.getMarker());
-        
+      // console.log(player1.getMarker());
+
+      //new Example:
+
+      function Hero(name, level){
+          this.name = name;
+          this.level = level;
+      }
+
+      function Warrior(name, level, weapon){
+          Hero.call(this, name, level);
+
+          this.weapon = weapon;
+      }
+
+      function Healer(name, level, spell){
+          Hero.call(this, name, level);
+
+          this.spell = spell;
+      }
+
+      //link prototypes
+
+      Object.setPrototypeOf(Warrior.prototype, Hero.prototype);
+      Object.setPrototypeOf(Healer.prototype, Hero.prototype);
+
+      //add Prototype methods
+
+      Hero.prototype.greet = function(){
+          return `Hi! ${this.name}.`;
+      }
+
+      Warrior.prototype.attack = function(){
+          return `${this.name} attacks with ${this.weapon}.`;
+      }
+
+      Healer.prototype.heal = function(){
+          return `${this.name} heals with ${this.spell}.`;
+    }
+
+    const hero1 = new Warrior("PK", 5 , "Gun");
+    const hero2 = new Healer("Loka", 7, "Antivenom");
+
+    //console.log(hero1.greet());
+    //console.log(hero1.attack());
+    //console.log(hero2.heal());
+
+    
     </script>
-</body>
+  </body>
 </html>
