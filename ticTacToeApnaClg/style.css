@@ -1,0 +1,34 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #00204a;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  height: 500px;
+  width: 500px;
+  background-color: #00204a;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  margin-top: 20px;
+}
+.box {
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+
+    border: none;
+  background-color: #00bbf0;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  font-size: 2rem;
+  color: #00204a;
+}
