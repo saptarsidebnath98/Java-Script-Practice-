@@ -9,14 +9,15 @@
 <body>
     <p>check the console-----></p>
     <script>
-        function check100(a, b){
+        /*function check100(a, b){
             if(a === 100 || b === 100){
                 return true;
             }else{
                 return (a + b) === 100 ? true : false;
             }
-        }
-        console.log(check100(100, 100));
+        }*/
+        const check100 = (a, b)=> a === 100 || b === 100 || (a + b) === 100 ? true : false ;
+        console.log(check100(1, 100));
     </script>
 </body>
 </html>
