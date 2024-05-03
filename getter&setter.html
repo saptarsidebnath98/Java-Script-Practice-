@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getter setter</title>
+</head>
+<body>
+    <script>
+        let user = {
+            name: "Saptarsi",
+            surename: "Debnath"
+        }
+        Object.defineProperty(user, "fullname", {
+            get(){
+                return `${this.name} ${this.surename}`
+            },
+            set(value){
+                [this.name, this.surename] = value.split(" ");
+            }
+        })
+        console.log(user.fullname);
+
+        for(let key in user) console.log(key);
+    </script>
+</body>
+</html>

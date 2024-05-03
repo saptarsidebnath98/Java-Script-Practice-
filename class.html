@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+    check the console----->
+    <script>
+        class User {
+            constructor(name, age){
+                this.name = name,
+                this.age = age
+            }
+
+            sayHi(){
+                return `Hi ${this.name}`;
+            }
+
+            showUserAge(){
+                return `${this.name} is ${this.age} years old.`
+            }
+        }
+
+        let user1 = new User("Jishnu", 25);
+        console.log(user1.sayHi());
+        console.log(user1.showUserAge());
+    </script>
+</body>
+</html>

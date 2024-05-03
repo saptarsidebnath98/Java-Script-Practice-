@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class in JS</title>
+</head>
+<body>
+    <script>
+        class User {
+            constructor(name, email){
+                this.name = name,
+                this.email = email
+            }
+
+            viewData(){
+                console.log("view Data");
+            }
+        }
+
+        class Admin extends User{
+            constructor(name, email){
+                super(name, email);
+            }
+            editData(){
+                console.log("edit data");
+            }
+        }
+
+        const student1 = new User("Saptarsi Debnath", "debsapt211@gmail.com");
+        const student2 = new User("Sudeshna Bhowmick", "sudeshna2002@gmail.com");
+
+        const principal = new Admin("Sharddha Khapra", "s@email.com");
+      
+    </script>
+</body>
+</html>
