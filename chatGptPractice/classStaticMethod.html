@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Car{
+            constructor(make, model, year){
+                this.make = make;
+                this.model = model;
+                this.year = year;
+            }
+
+            static compare(car1, car2){
+                return (car1.year > car2.year ? car1 : car2);
+            }
+        }
+        const car1 = new Car("TATA", "Punch", 2021);
+        const car2 = new Car("Mahindra", "XUV700", 2023);
+        const latestCar = Car.compare(car1, car2);
+        console.log(`latest car ${latestCar.make} ${latestCar.model}`);
+    </script>
+</body>
+</html>
