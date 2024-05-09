@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    check console-->
+    <script>
+        //eat
+        //code
+        //sleep
+        //repeat
+
+    const p1 = new Promise((res, rej)=>{
+            return res("eat");
+    })
+
+    const p2 = p1.then((data)=>{
+        console.log(data);
+        return new Promise((res, rej)=>{
+            return res("code");
+        })
+    })
+
+    const p3 = p2.then((data)=>{
+        console.log(data);
+        return new Promise((res, rej)=>{
+            return res("sleep");
+        })
+    })
+
+    const p4 = p3.then((data)=>{
+        console.log(data);
+        return new Promise((res, rej)=>{
+            return res("repeat");
+        })
+    })
+
+    p4.then((data)=>{
+        console.log(data);
+    })
+    </script>
+</body>
+</html>
