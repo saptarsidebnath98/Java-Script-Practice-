@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USING API</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <img src="#" style="display: none">
+    <script>
+        const button = document.createElement("button");
+        document.body.appendChild(button);
+        button.textContent = "GET NEW GIF";
+        button.style.cssText = "margin: 20px; background-color: yellow; padding: 10px;";
+
+        button.addEventListener('click', ()=>{
+            console.log("button was clicked");
+            changeGif();
+        });
+
+        
+        function changeGif(){
+           const image = document.querySelector("img");
+           image.style.display = "block";
+           document.body.appendChild(image);
+           fetch('https://api.giphy.com/v1/gifs/translate?api_key=Y8BW16wpdORrS8lvU9DiQqvBxlpVqHcr&s=cats')
+           .then((response)=>{
+               return response.json();
+           })
+           .then((response)=>{
+               image.src = response.data.images.original.url;
+           })
+       }
+
+     /* async function getData(){
+        const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=Y8BW16wpdORrS8lvU9DiQqvBxlpVqHcr&s=cats')
+        const data = await response.json();
+        console.log(data);
+      }
+
+      getData();*/
+    </script>
+</body>
+</html>
