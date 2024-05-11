@@ -54,7 +54,10 @@
             changeGif();
         });
 
-        
+        const errorDiv = document.createElement("div");
+        document.body.appendChild(errorDiv);
+        errorDiv.style.display = "none";
+
         function changeGif(){
            const image = document.querySelector("img");
            document.body.appendChild(image);
@@ -71,7 +74,10 @@
                    image.src = response.data.images.original.url;
                })
                .catch((e)=>{
-                   alert("Unable to process request");
+                    errorDiv.style.display = "block";
+                   errorDiv.textContent = "Unable to process request";
+                   image.src = "error.png";
+                   image.style.cssText = "height: 200px; width: 200px";
                    console.log(e);
                })
            }else{
