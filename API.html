@@ -9,16 +9,45 @@
         body{
             display: flex;
             flex-direction: column;
+            align-items: center;
+            background-color: #8a1253;
+        }
+        input {
+            width: 400px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            background-color: #c51350;
+            border: none;
+            color: #fda403;
+        }
+        button {
+            margin: 20px;
+            width: 200px;
+            background-color: #e8751a;
+            padding: 10px;
+            border: none;
+            box-shadow: 2px 2px 2px #c51350;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        img{
+            border: 2px soild #e8751a;
         }
     </style>
 </head>
 <body>
     <img src="#" style="display: none">
     <script>
+        const input = document.createElement("input");
+        document.body.appendChild(input);
+        input.placeholder = "search GIF";
+
         const button = document.createElement("button");
         document.body.appendChild(button);
         button.textContent = "GET NEW GIF";
-        button.style.cssText = "margin: 20px; background-color: yellow; padding: 10px;";
+        button.style.cssText = "";
+
 
         button.addEventListener('click', ()=>{
             console.log("button was clicked");
@@ -28,15 +57,26 @@
         
         function changeGif(){
            const image = document.querySelector("img");
-           image.style.display = "block";
            document.body.appendChild(image);
-           fetch('https://api.giphy.com/v1/gifs/translate?api_key=Y8BW16wpdORrS8lvU9DiQqvBxlpVqHcr&s=cats')
-           .then((response)=>{
-               return response.json();
-           })
-           .then((response)=>{
-               image.src = response.data.images.original.url;
-           })
+           const apiKey = 'Y8BW16wpdORrS8lvU9DiQqvBxlpVqHcr';
+
+           if(input.value != ""){
+            
+               fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${input.value.toLowerCase()}s`)
+               .then((response)=>{
+                   return response.json();
+               })
+               .then((response)=>{
+                image.style.display = "block";
+                   image.src = response.data.images.original.url;
+               })
+               .catch((e)=>{
+                   alert("Unable to process request");
+                   console.log(e);
+               })
+           }else{
+               alert("You must enter a value in the search box.");
+           }
        }
 
      /* async function getData(){
