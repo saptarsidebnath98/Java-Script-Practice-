@@ -10,4 +10,6 @@ const fibbo = (n) =>{
     return arr;
 }
 
-const fibsRec()
+const fibsRec = (n) =>{
+    Pass;
+}
