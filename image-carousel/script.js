@@ -12,5 +12,20 @@ function autoDisplayImgChange(){
         console.log(currentIndex);
     }, 5000)
 }
-
 autoDisplayImgChange();
+
+const rightArrow = document.querySelector('.rightArrow');
+
+rightArrow.addEventListener('click', ()=>{
+    addOne();
+})
+
+
+// document.querySelector('#r8').addEventListener('click',()=>{
+//     addOne();
+// })
+
+function addOne(){
+    displayedImg.src = `images/img${currentIndex + 1}.jpg`;
+    console.log(currentIndex);
+}
