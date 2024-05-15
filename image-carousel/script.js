@@ -93,3 +93,29 @@ function imgNavBtnRelation(){
 }
 
 
+const imagesItems = document.querySelectorAll(".imagesItems");
+
+// Loop through all images
+for (let i = 0; i < imagesItems.length; i++) {
+    // Add click event listener to each image
+    imagesItems[i].addEventListener("click", function() {
+        addYellowBorder(this);
+    });
+}
+
+// Function to add yellow border to the clicked image and remove it from other images
+function addYellowBorder(clickedImage) {
+    // Loop through all images
+    for (let i = 0; i < imagesItems.length; i++) {
+        // Remove yellow border from all images
+        imagesItems[i].style.border = "none";
+        imagesItems[i].style.height = "70px";
+    }
+
+    // Add yellow border to the clicked image
+    clickedImage.style.border = "2px solid yellow";
+    clickedImage.style.height =  "100px";
+}
+    
+
+
