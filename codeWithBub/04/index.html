@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const strFirstLast3 = (str) => str.length >= 3 ? str.slice(0, 3) + str.slice(-3) : str;
+
+         const strFirstHalf = (str) => str.length %2 == 0 ? str.slice(0, str.length/ 2) : str;
+
+         const strExceptFirstChars = (str1, str2) => str1.slice(1) + str2.slice(1);
+
+         const nearestTo100 = (num1, num2) => 100 - num1 > 100 - num2 ? num2 : num1;
+
+         /*const occur = (str, char) =>{
+             let count = 0;
+             for(let i = 0; i < str.length; i++){
+                 if (str[i] === char){
+                     count += 1;
+                 }
+             }
+             return count>=2 && count <=4;
+         }*/
+
+         const occurTernary = (str, char) => str.split('').filter(ch => ch == char).length;
+         const occur2To4 = (str, char) => occurTernary(str, char)>=2 && occurTernary(str, char)<=4;
+        //console.log(occur2To4("banana", "a")); 
+
+         const evenDigits = (arr) => arr.filter(digit => digit%2 == 0).length;
+
+         const evenDigitInRange = (range) => {
+             let arr = [];
+             for(let i = 1; i< range; i++){
+                arr.push(i);
+             }
+             return evenDigits(arr);
+         }
+         
+         const isAssending = (arr) =>{
+             for(let i=0; i < arr.length ; i++){
+                 if(arr[i+1] < arr[i]){
+                     return false;
+                 }
+            }
+            return true;
+         }
+
+         const largestEvenNumber = (arr) => arr.filter(digit => digit%2 == 0).reduce((finalNum, currentNum)=> finalNum > currentNum ? finalNum : currentNum);
+         //largestEvenNumber([1, 15, 60, 2, 3, 90, 100, 10, 500, 599]) // output 500
+
+         const replaceFirstDigit = (str) => str.replace(/[0-9]/,'$');
+         //replaceFirstDigit("saptar99"); o/p 'saptar$9'
+
+         const replaceAllDigit = (str) => str.replace(/[0-9]/g,'$');
+         //replaceAllDigit("saptar99"); o/p 'saptar$$'
+
+         const replace1stDigit = (str) => str.replace(/\d/,'$');
+         //replaceFirstDigit("saptar99"); o/p 'saptar$9'
+    </script>
+</body>
+</html>
