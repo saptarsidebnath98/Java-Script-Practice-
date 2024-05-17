@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* const checkSort = (arr) => {
+            let newArr = []
+            for(let i = 0; i < arr.length ; i++){
+                if(arr[i + 1] < arr[i])
+                return flase
+            }
+            return true;
+        }
+
+        console.log(checkSort([3, 2, 1, 13, 8, 5, 0, 1]));
+        console.log(checkSort([105, 79, 100, 110])); */
+
+        let arr = [3,2,1,4];
+        
+        let arr1 = [];
+        for(let i = 0; i < arr.length / 2; i++){
+            arr1.push(arr[i]);
+        }
+
+        let arr2 = [];
+        for(let i = (arr.length / 2); i < arr.length; i++){
+            arr2.push(arr[i]);
+        }
+        console.log(arr1, arr2);
+    </script>
+</body>
+</html>

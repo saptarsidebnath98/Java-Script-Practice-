@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //leap year
+      const leapYearCheck = (year) => (year % 4 === 0 ? true : false);
+
+      //csv to 2D array
+      const csvTo2D = (csvString) =>
+        csvString.split("\n").map((item) => item.split(","));
+
+      const hexadecimalColorCode = () => {
+        let allCode = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let code = "#";
+        for (let i = 0; i < 6; i++) {
+          code += allCode[Math.floor(Math.random() * allCode.length)];
+        }
+        return code;
+      };
+      //checks true for all, false otherwise
+      const grtrThn3 = (item) => item > 3;
+      const arrChk = (arr, func) => arr.every((item) => func(item));
+      //arrChk([1, 2, 3, 4], grtrThn3) o/p: false
+      //arrChk([7, 6, 5, 4], grtrThn3) o/p: true
+
+      const sortStr = (str) => str.split("").sort().join("");
+
+      const countVowels = (word) => {
+        let count = 0;
+        const vowels = ["a", "e", "i", "o", "u"];
+
+        for (let i = 0; i < word.length; i++) {
+          if (vowels.includes(word[i].toLowerCase())) {
+            count += 1;
+          }
+        }
+        return count;
+      };
+    </script>
+  </body>
+</html>
