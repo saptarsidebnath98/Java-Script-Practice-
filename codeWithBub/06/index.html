@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        const covertToNotes = (amount) => {
+            let notes = [50 , 20 , 10 , 5];
+            let noteAmount = 0;
+            for(let i = 0; i < notes.length ; i++){
+                if(noteAmount <= amount){
+                    noteAmount += notes[i];
+                }
+            }
+            console.log(noteAmount); 
+        }
+
+        const uniqueChars = (str) => [...new Set(str.toLowerCase().split(""))];
+
+        const firstUnique = (str) =>
+            str.split('')
+                .filter((item, index, arr)=>
+                    arr.filter(arrItem => arrItem === item).length === 1
+                )[0];
+        
+    </script>
+</body>
+</html>
