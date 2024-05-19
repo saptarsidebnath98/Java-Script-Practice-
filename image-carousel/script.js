@@ -13,7 +13,7 @@ function autoDisplayImgChange(){
             }
         }, 2000)  
     }
-// autoDisplayImgChange();
+autoDisplayImgChange();
     
 function imageAndButtonBgLogic(index){
         displayedImg.src = `images/img${index}.jpg`;
@@ -85,29 +85,29 @@ buttons.forEach((button)=>{
 })
 
 
-// const imagesItems = document.querySelectorAll(".imagesItems");
+const imagesItems = document.querySelectorAll(".imagesItems");
 
-// // Loop through all images
-// for (let i = 0; i < imagesItems.length; i++) {
-//     // Add click event listener to each image
-//     imagesItems[i].addEventListener("click", function() {
-//         addYellowBorder(this);
-//     });
-// }
+// Loop through all images
+for (let i = 0; i < imagesItems.length; i++) {
+    // Add click event listener to each image
+    imagesItems[i].addEventListener("click", function() {
+        addYellowBorder(this);
+    });
+}
 
-// // Function to add yellow border to the clicked image and remove it from other images
-// function addYellowBorder(clickedImage) {
-//     // Loop through all images
-//     for (let i = 0; i < imagesItems.length; i++) {
-//         // Remove yellow border from all images
-//         imagesItems[i].style.border = "none";
-//         imagesItems[i].style.height = "70px";
-//     }
+// Function to add yellow border to the clicked image and remove it from other images
+function addYellowBorder(clickedImage) {
+    // Loop through all images
+    for (let i = 0; i < imagesItems.length; i++) {
+        // Remove yellow border from all images
+        imagesItems[i].style.border = "none";
+        imagesItems[i].style.height = "70px";
+    }
 
-//     // Add yellow border to the clicked image
-//     clickedImage.style.border = "2px solid yellow";
-//     clickedImage.style.height =  "100px";
-// }
+    // Add yellow border to the clicked image
+    clickedImage.style.border = "2px solid yellow";
+    clickedImage.style.height =  "100px";
+}
     
 
 

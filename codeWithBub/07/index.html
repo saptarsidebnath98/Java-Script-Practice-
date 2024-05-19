@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS practice</title>
+  </head>
+  <body>
+    <h1>check the console</h1>
+
+    <script>
+      const people = [
+        {
+          firstName: "Sam",
+          lastName: "Hughes",
+          DOB: "07/07/1978",
+          department: "Development",
+          salary: "45000",
+        },
+        {
+          firstName: "Terri",
+          lastName: "Bishop",
+          DOB: "02/04/1989",
+          department: "Development",
+          salary: "35000",
+        },
+        {
+          firstName: "Jar",
+          lastName: "Burke",
+          DOB: "11/01/1985",
+          department: "Marketing",
+          salary: "38000",
+        },
+        {
+          firstName: "Julio",
+          lastName: "Miller",
+          DOB: "12/07/1991",
+          department: "Sales",
+          salary: "40000",
+        },
+        {
+          firstName: "Chester",
+          lastName: "Flores",
+          DOB: "03/15/1988",
+          department: "Development",
+          salary: "41000",
+        },
+        {
+          firstName: "Madison",
+          lastName: "Marshall",
+          DOB: "09/22/1980",
+          department: "Sales",
+          salary: "32000",
+        },
+        {
+          firstName: "Ava",
+          lastName: "Pena",
+          DOB: "11/02/1986",
+          department: "Development",
+          salary: "38000",
+        },
+        {
+          firstName: "Gabriella",
+          lastName: "Steward",
+          DOB: "08/26/1994",
+          department: "Marketing",
+          salary: "46000",
+        },
+        {
+          firstName: "Charles",
+          lastName: "Campbell",
+          DOB: "09/04/1977",
+          department: "Sales",
+          salary: "42000",
+        },
+        {
+          firstName: "Tiffany",
+          lastName: "Lambert",
+          DOB: "05/11/1990",
+          department: "Development",
+          salary: "34000",
+        },
+        {
+          firstName: "Antonio",
+          lastName: "Gonzalez",
+          DOB: "03/24/1985",
+          department: "Office Management",
+          salary: "49000",
+        },
+        {
+          firstName: "Aaron",
+          lastName: "Garrett",
+          DOB: "09/04/1985",
+          department: "Development",
+          salary: "39000",
+        },
+      ];
+
+      const ppl = [{salary: "700"},{salary: "500"}, {salary: "300"}]
+      // Exercises
+
+      // 1) What is the average income of all the people in the array?
+      const avgSal = (arr) => {
+         const totalSalary =  arr.map((item) => item.salary).reduce((totalSal, currentSal) => +totalSal + +currentSal);
+
+         return totalSalary/ arr.length ;
+      }
+      //console.log(`average income : ${avgSal(people)}`);
+
+      // 2) Who are the people that are currently older than 30?
+      const  BYear = people[0].DOB.split("/")[2];
+      const currYear = new Date().getFullYear();
+      console.log(people[0].DOB);
+      console.log(currYear - BYear);
+
+
+      // 3) Get a list of the people's full name (firstName and lastName).
+
+      // 4) Get a list of people in the array ordered from youngest to oldest.
+
+      // 5) How many people are there in each department?
+    </script>
+  </body>
+</html>
