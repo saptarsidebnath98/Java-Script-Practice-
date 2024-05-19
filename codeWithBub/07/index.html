@@ -102,24 +102,25 @@
 
       // 1) What is the average income of all the people in the array?
       const avgSal = (arr) => {
-         const totalSalary =  arr.map((item) => item.salary).reduce((totalSal, currentSal) => +totalSal + +currentSal);
+         const totalSalary =  arr.map((item) => item.salary).reduce((totalSal, currentSal) => totalSal + +currentSal,0);
 
          return totalSalary/ arr.length ;
       }
-      //console.log(`average income : ${avgSal(people)}`);
+      console.log(`average income : ${avgSal(people)}`);
 
-      // 2) Who are the people that are currently older than 30?
-      const  BYear = people[0].DOB.split("/")[2];
-      const currYear = new Date().getFullYear();
-      console.log(people[0].DOB);
-      console.log(currYear - BYear);
+      // 2) Who are the people that are currently older than 30
+     
 
+    const olderThan30 =  people.filter((item) => new Date().getFullYear() - new Date(item.DOB).getFullYear() > 30);
 
+    console.log(olderThan30);
       // 3) Get a list of the people's full name (firstName and lastName).
+      people.map((item) => item.firstName + " " + item.lastName);
 
       // 4) Get a list of people in the array ordered from youngest to oldest.
-
+      people.sort((personA, personB) => new Date(personB.DOB) - new Date(personA.DOB));
       // 5) How many people are there in each department?
+      people.reduce((accumulator, person)=> ({...accumulator, [person.department]: accumulator[person.department] + 1 || 1}),{})
     </script>
   </body>
 </html>
