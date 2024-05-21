@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM practice</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container mt-2">
+        <h1>Registration Form</h1>
+        <form id="registrationForm">
+          <div class="form-group row">
+            <div class="col">
+              <input id="username" type="text" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col">
+              <input id="password" type="password" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col">
+              <input id="confirmPassword" type="password" class="form-control">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+                <button class="btn btn-primary btn-block">
+                  Register
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <script>
+          /* JavaScript DOM Exercises 02 Tutorial: https://youtu.be/qQy5K-pE8Fo */
+/*
+  Exercises 01
+  ------------
+  Add a label to each of the input fields: username, password, confirm password
+*/
+        const list = ['username', 'password', 'confirmPassword'];
+
+        for(let i = 0; i < list.length; i++){
+            document.querySelector(`#${list[i]}`)
+            .insertAdjacentHTML('beforeBegin',`<label for="${list[i]}">${list[i]}:</label>`);
+        }
+/*
+  Exercise 02
+  -----------
+  Add a required validation to each input that shows an error message next to the entry if it does not have any text entered.
+*/
+
+
+/*
+  Exercise 03
+  -----------
+  Add a further validation to check if the user input in the password and confirm password inputs match.  Show an error message if they do not.
+*/
+
+/*
+  Exercise 04
+  -----------
+Ensure the ‘Register’ button is disabled until the user has entered valid data into all the input fields.  Once they have, the registration button should then be enabled.
+*/
+
+
+/*
+  Exercise 05
+  -----------
+When the user clicks the ‘Register’ button, a message should be displayed informing them of a successful user registration.
+*/
+
+
+
+/*
+  Exercise 02
+  -----------
+  Add a required validation to each input that shows an error message next to the entry if it does not have any text entered.
+*/
+
+
+
+      </script>
+</body>
+</html>
