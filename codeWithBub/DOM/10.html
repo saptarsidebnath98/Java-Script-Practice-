@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+      <h1>Heading</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque reiciendis ipsa harum repellat sed, tempora asperiores perspiciatis ut temporibus debitis, eos architecto? rem amet et repudiandae. Adipisci eum beatae ipsum fugit nisi corrupti pariatur cupiditate corporis consequatur sequi fugiat ipsa! ratione magni illum, maxime iste unde autem fuga officiis similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ratione voluptate? dicta odio cumque deserunt! perferendis libero asperiores quisquam, est suscipit itaque incidunt ex doloremque magnam fugit quam nostrum atque quia. Accusamus qui animi eum quibusdam dignissimos illo? Enim doloremque corrupti error sint obcaecati facere praesentium minima ullam dolor commodi!</p>
+
+      <script>
+          const para = document.querySelector('p');
+         para.innerHTML =  para.innerText
+          .split(' ')
+          .map((word) => word.length > 8 ? `<span style="background-color: yellow">${word}</span>` : word)
+          .join(" ");
+          //.........................
+          const link = document.createElement('a');
+          document.body.appendChild(link);
+          link.textContent = "GOOGLE";
+          link.href =  "https://www.google.com/";
+          link.target = "_blank";
+
+          //.........................
+          para.innerHTML = para.innerHTML
+          .split(".")
+          .join('.</p><p>') + '</p>';  
+
+          //.........................
+
+          const countWrd = para.textContent.split(" ").length;
+
+          const  countDiv = document.createElement('div');
+          countDiv.textContent = `${countWrd} words`;
+          document.body.insertBefore(countDiv, para);
+
+          //.........................
+          para.innerHTML = para.innerHTML.replaceAll('?', '🧐').replaceAll('!', '😲');
+
+      </script>
+  </body>
+</html>
