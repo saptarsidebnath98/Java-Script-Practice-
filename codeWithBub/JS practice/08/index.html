@@ -73,7 +73,7 @@
             //or
             orders.some(item => item.customerId === '123' && item.orderId);
       // 5) Have any products with an id of 123 been sold?
-        orders.some((item) => item.delivered === true && item.items.some((elem) => elem.productId === "123"));
+        orders.some((item) => item.delivered && item.items.some((elem) => elem.productId === "123"));
     </script>
   </body>
 </html>

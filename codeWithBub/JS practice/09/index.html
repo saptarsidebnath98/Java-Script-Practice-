@@ -41,7 +41,8 @@ const comments = [
 
 // 1) What is Madison Marshall's user id?
 
-users.filter((item) => item.firstName === "Madison" && item.lastName === "Marshall").map((elem)=> elem.id);
+users.find((item) => item.firstName === "Madison" && item.lastName === "Marshall").id
+//users.filter((item) => item.firstName === "Madison" && item.lastName === "Marshall").map((elem)=> elem.id);
 
 //this was done assuming userIndex and commentIndex are same
  //const MadisonMarshallUserId = comments[users.indexOf(users.filter((item) => item.firstName === "Madison" && item.lastName === "Marshall")[0])].userId; 
@@ -51,17 +52,24 @@ users.filter((item) => item.firstName === "Madison" && item.lastName === "Marsha
 // 2) Who wrote the first comment (assuming the first comment is in position 0 of the comments array)
 users.filter((item) => item.id === comments[0].userId).map((item) => item.firstName + " " + item.lastName);
 
+//users.find((item) => item.id === comments[0].userId);
 
 // 3) Which user commented 'OK great thanks'?
-users.filter((user) => user.id === comments.filter((item) => item.text === 'OK great thanks')[0].userId).map((item) => item.firstName + " " + item.lastName);
+users.find((user) => user.id === comments.find((item) => item.text === 'OK great thanks').userId);
+
+//users.filter((user) => user.id === comments.find((item) => item.text === 'OK great thanks').userId).map((item) => item.firstName + " " + item.lastName);
+
 
 //breaking upper code:
 //const textUserId = comments.filter((item) => item.text === 'OK great thanks')[0].userId
 //users.filter((user) => user.id === textUserId).map((item) => item.firstName + " " + item.lastName)
 
 // 4) Add the user's first and last name to each comment in the comments array
-comments.forEach((item) =>)
 
+comments.map((cmnt) => {
+   const {firstName, lastName } = users.find((user) => user.id === cmnt.userId);
+   return {...cmnt, firstName, lastName}
+})
 
 // 5) Get a list of the users who haven't commented
 users.filter((item => !comments.map(elem => elem.userId).includes(item.id)));
