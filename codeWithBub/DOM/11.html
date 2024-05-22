@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM practice</title>
     <style>
+      .container > #registrationForm{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      };
     </style>
 </head>
 <body>
@@ -44,17 +49,27 @@
   ------------
   Add a label to each of the input fields: username, password, confirm password
 */
-        const list = ['username', 'password', 'confirmPassword'];
-
-        for(let i = 0; i < list.length; i++){
-            document.querySelector(`#${list[i]}`)
-            .insertAdjacentHTML('beforeBegin',`<label for="${list[i]}">${list[i]}:</label>`);
-        }
+document.querySelector('#username').insertAdjacentHTML("beforeBegin",`<label for="username">Username:</label>`);
+document.querySelector('#password').insertAdjacentHTML("beforeBegin",`<label for="password">Password</label>`);
+document.querySelector('#confirmPassword').insertAdjacentHTML("beforeBegin",`<label for="confirmPassword">Confirm Password:</label>`);
+    
 /*
   Exercise 02
   -----------
   Add a required validation to each input that shows an error message next to the entry if it does not have any text entered.
 */
+const ckeckInput = (event) => {
+  const errorElement = Array.from(event.target.parentNode.querySelectorAll('span'));
+  if(event.target.value === '' && !errorElement.length){
+    event.target.insertAdjacentHTML('afterEnd', `<span style="color: red; font-size: 0.7rem">Required</span>`)
+  }
+  if(errorElement && event.target.value !== ''){
+    errorElement.forEach(elem => elem.remove());
+  }
+}
+document.querySelector('#username').addEventListener('blur', ckeckInput);
+document.querySelector('#password').addEventListener('blur', ckeckInput);
+document.querySelector('#confirmPassword').addEventListener('blur',ckeckInput);
 
 
 /*
@@ -62,7 +77,14 @@
   -----------
   Add a further validation to check if the user input in the password and confirm password inputs match.  Show an error message if they do not.
 */
+const passwordInput = document.querySelector('#password');
+const confirmPasswordInput = document.querySelector("#confirmPassword");
 
+confirmPasswordInput.addEventListener('blur', (event) => {
+  if(event.target.value !== password.value){
+    event.target.insertAdjacentHTML('afterEnd', `<span style="color: red; font-size: 0.7rem">password should match</span>`)
+  }
+})
 /*
   Exercise 04
   -----------
