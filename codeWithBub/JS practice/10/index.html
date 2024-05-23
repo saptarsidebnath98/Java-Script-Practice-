@@ -56,9 +56,10 @@
          * 
          * Check whether every email address in the list of users is valid (get a true or false value)
          */
+        users.every((item) => item.email.split('.')[1] == 'com');
         
-        
-        
+        //how to check?
+        users.filter((item) => item.email.split('.')[1] !== 'com');
         
         
         
@@ -69,7 +70,7 @@
          * https://en.wikipedia.org/wiki/Classful_network
          */
         
-        
+        users.filter((item) => +item.ip_address.split('.')[0] >= 1 && +item.ip_address.split('.')[0] <= 127).length;
         
         
         
@@ -79,9 +80,12 @@
          * 
          * Find the position in the array of the first  user object that has a Class B IP address
          */
+         
+         
+         users.indexOf(users.find((item) => +item.ip_address.split('.')[0] >= 128 && +item.ip_address.split('.')[0] <= 191))
         
         
-        
+
         
         
         
@@ -90,7 +94,7 @@
          * 
          * Find the user object that has the 'soundcloud' email address
          */
-        
+        users.find((item) => item.email.split("@")[1].includes("soundcloud"));
         
         
         
@@ -101,7 +105,7 @@
          * 
          * Replace all the items in the array with a string value of 'deleted'
          */
-        
+        users.map((item) => item = "deleted");
     </script>
 </body>
 </html>
