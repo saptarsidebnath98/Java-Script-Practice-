@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codewars</title>
+</head>
+<body>
+    <script>
+        function maskify(cc) {
+            const ccArr = cc.split('');
+            let ccArr1 = ccArr.slice(0, ccArr.length - 4);
+            let ccArr2 = ccArr.slice(-4);
+            return cc.length< 4 || cc == '' ? cc : ccArr1.fill("#").join('').concat(ccArr2.join(''));
+        }
+        function descendingOrder(n){
+            return n > 0 ? Number(n.toString().split('').sort((a, b) => b - a).join('')) : n;
+        }
+
+        
+      /*  function addBinary(a,b) {
+            let num = a + b;
+            let rem = [];
+            while(num > 0){
+                rem.unshift(num % 2);
+                num = Math.floor(num / 2);
+            }
+            return rem.join('');
+        }
+        */
+        
+         const addBinary = (a, b) => {
+             return (a+b).toString(2);
+         }
+
+         function DNAStrand(dna) {
+
+            const complement = {
+                'A': 'T',
+                'T': 'A',
+                'C': 'G',
+                'G': 'C'
+            }
+
+            return dna.split('').map(neucliotide => complement[neucliotide]).join('');
+         }
+    </script>
+</body>
+</html>
