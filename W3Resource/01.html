@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+</head>
+<body>
+    <figcaption>Check the console-></figcaption>
+    <p>if want to print this page, click the button.</p>
+    <button onclick=printCurrentPage()>Print</button>
+    <script>
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        let today = "Today is: " + days[new Date().getDay()];
+
+        let currHour = new Date().getHours();
+        let ampm = currHour >= 12 ? "PM" : "AM"
+
+        let currTime = currHour + ` ${ampm}` + " : " + new Date().getMinutes() + " : " + new Date().getSeconds();
+
+        //console.log(today);
+       //console.log(currTime);
+//---------------------------------------------------------------
+       const printCurrentPage = () => {
+           window.print();
+       }
+//---------------------------------------------------------------
+        let currMonth = (new Date().getMonth()+ 1).toString.length < 2 ? "0" + (new Date().getMonth()+ 1) : (new Date().getMonth()+ 1);
+       let currDate = new Date().getDate() + "/" + currMonth  + "/" + new Date().getFullYear();
+
+//---------------------------------------------------------------
+       //Write a JavaScript program to find out if 1st January will be a Sunday between 2014 and 2050.
+       function getYear(){
+           for(let year = 2014; year <= 2050; year++){
+               let d = new Date(year, 0, 1);
+               if(d.getDay() === 0){
+                   console.log("The year when 1st January will be sunday:", year);
+               }
+           }
+       }
+    </script>
+</body>
+</html>

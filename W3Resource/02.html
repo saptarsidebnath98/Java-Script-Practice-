@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const computerInp = Math.floor(Math.random() * 11);
+
+        const guessGame = (computerInp) => {
+            let userInp = parseInt(prompt("Guess number between 0-10 : "));
+            
+            console.log(`Bot choice: ${computerInp}`);
+            console.log(`User choice: ${userInp}`);
+        
+        
+            console.log("GAME OVER! You guessed it right!");
+        }
+        
+        guessGame(computerInp);
+        ;
+    </script>
+</body>
+</html>
