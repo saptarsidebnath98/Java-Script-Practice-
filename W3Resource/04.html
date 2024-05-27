@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="
+    #">
+    <label for="fstNum">1st Number:</label>
+    <input type="number" id="fstNum">
+    <label for="scndNum">2nd Number:</label>
+    <input type="number" id="scndNum">
+</form>
+    <button id="mulBtn">Multiply</button>
+    <button id="divBtn">Divide</button>
+
+    <div>
+        <p>The Result is:</p>
+        <span id="result"></span>
+    </div>
+
+    <script>
+        function mul(num1, num2){
+            return num1 * num2;
+        }
+        function div(num1, num2){
+            return num1 / num2;
+        }
+
+        const fstNum = document.querySelector('#fstNum').value;
+        const scndNum = document.querySelector('#scndNum').value;
+        const mulBtn = document.querySelector('#mulBtn');
+        const divBtn = document.querySelector('#divBtn');
+        const rsltArea = document.querySelector('#result');
+        
+        mulBtn.addEventListener('click',()=> {
+            rsltArea.textContent = mul(Number(fstNum), Number(scndNum));
+        })
+
+        divBtn.addEventListener('click',()=> {
+            rsltArea.textContent = div(parseInt(fstNum), parseInt(scndNum));
+        })
+
+    </script>
+</body>
+</html>

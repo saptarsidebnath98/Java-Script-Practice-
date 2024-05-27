@@ -8,20 +8,21 @@
 </head>
 <body>
     <script>
-        const computerInp = Math.floor(Math.random() * 11);
-
+        
         const guessGame = (computerInp) => {
+            const computerInp = Math.floor(Math.random() * 11);
             let userInp = parseInt(prompt("Guess number between 0-10 : "));
-            
+            if(userInp === computerInp){
+                console.log("GameOver!");
+            }else if(userInp > computerInp){
+                console.log("put lower value");
+            }else if(userInp < computerInp){
+                console.log("put upper value");
+            }
             console.log(`Bot choice: ${computerInp}`);
-            console.log(`User choice: ${userInp}`);
-        
-        
-            console.log("GAME OVER! You guessed it right!");
+            console.log(`User choice: ${userInp}`); 
         }
-        
-        guessGame(computerInp);
-        ;
+    
     </script>
 </body>
 </html>
