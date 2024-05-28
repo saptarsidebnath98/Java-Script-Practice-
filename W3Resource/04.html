@@ -5,14 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+
+            margin: 10px 0px;
+        }
+    </style>
 </head>
 <body>
     <form action="
     #">
     <label for="fstNum">1st Number:</label>
-    <input type="number" id="fstNum">
+    <input type="text" id="fstNum">
     <label for="scndNum">2nd Number:</label>
-    <input type="number" id="scndNum">
+    <input type="text" id="scndNum">
 </form>
     <button id="mulBtn">Multiply</button>
     <button id="divBtn">Divide</button>
@@ -30,19 +38,27 @@
             return num1 / num2;
         }
 
-        const fstNum = document.querySelector('#fstNum').value;
-        const scndNum = document.querySelector('#scndNum').value;
+        const fstNum = document.querySelector('#fstNum');
+        const scndNum = document.querySelector('#scndNum');
         const mulBtn = document.querySelector('#mulBtn');
         const divBtn = document.querySelector('#divBtn');
         const rsltArea = document.querySelector('#result');
         
-        mulBtn.addEventListener('click',()=> {
-            rsltArea.textContent = mul(Number(fstNum), Number(scndNum));
-        })
-
-        divBtn.addEventListener('click',()=> {
-            rsltArea.textContent = div(parseInt(fstNum), parseInt(scndNum));
-        })
+        mulBtn.addEventListener('click', () => {
+            const num1 = parseFloat(fstNum.value);
+            const num2 = parseFloat(scndNum.value);
+            rsltArea.textContent = mul(num1, num2);
+        });
+    
+        divBtn.addEventListener('click', () => {
+            const num1 = parseFloat(fstNum.value);
+            const num2 = parseFloat(scndNum.value);
+            if (num2 === 0) {
+                rsltArea.textContent = 'Error: Division by zero';
+            } else {
+                rsltArea.textContent = div(num1, num2);
+            }
+        });
 
     </script>
 </body>
