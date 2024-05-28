@@ -1,15 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>W3 resources</title>
-</head>
-<body>
-    <p>Check the console</p>
+  </head>
+  <body>
+    <h3>Convert the Temperature:</h3>
+    <p>
+      If your temperature is 72°F type 72/ 25°C type 25 and press the button
+      accordingly.
+    </p>
+    <input type="text" id="tempInput" placeholder="Ex: type 32 for 32°C" />
+
+    <button id="btnCtoF">Convert Celcious to Farenheit</button>
+    <button id="btnFtoC">Convert Farenheit to Celcious</button>
+    <button id="reset">RESET</button>
+    <h1 id="display"></h1>
+
     <script>
-        
+      const CtoF = (temp) => {
+        return (9 / 5) * temp + 32;
+      };
+      const FtoC = (temp) => {
+        return (5 / 9) * (temp - 32);
+      };
+
+      const inputTemp = document.querySelector("#tempInput");
+      const btnCtoF = document.querySelector("#btnCtoF");
+      const btnFtoC = document.querySelector("#btnFtoC");
+      const display = document.querySelector("#display");
+      const resetBtn = document.querySelector("#reset");
+
+      let result = "";
+
+      btnCtoF.addEventListener("click", () => {
+        result = CtoF(parseFloat(inputTemp.value));
+
+        if (inputTemp.value === "" || isNaN(result)) {
+          alert("Please provide valid number to the filed!");
+          inputTemp.value = "";
+        } else {
+          display.textContent = `${inputTemp.value}°C = ${result}°F`;
+          inputTemp.value = "";
+        }
+      });
+
+      btnFtoC.addEventListener("click", () => {
+        result = FtoC(parseFloat(inputTemp.value));
+        if (inputTemp.value === "" || isNaN(result)) {
+          alert("Please provide valid number to the filed!");
+          inputTemp.value = "";
+        } else {
+          display.textContent = `${inputTemp.value}°F = ${result}°C`;
+          inputTemp.value = "";
+        }
+      });
+
+      resetBtn.addEventListener("click", () => {
+        inputTemp.value = "";
+        display.textContent = "";
+      });
     </script>
-</body>
+  </body>
 </html>
