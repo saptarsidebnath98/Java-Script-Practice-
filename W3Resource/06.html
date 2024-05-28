@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 resources</title>
+</head>
+<body>
+    <script>
+        const sum = (n1, n2) => {
+            if(n1 === n2){
+                return (n1+ n1) * 3;
+            }else{
+                return n1+ n2;
+            }
+        }
+
+        //console.log(sum(5, 8));
+        //console.log(sum(2, 2));
+
+        const diff19 = (num) => {
+            if(num > 19){
+                return (num - 19)*3;
+            }else{
+                return (19 - num);
+            }
+        }
+        //console.log(diff19(15));
+        //console.log(diff19(20));
+
+        const chk50 = (n1, n2) => n1===50 || n2===50 || n1+n2===50 ? true : false;
+        //console.log(chk50(25, 25));
+       //console.log(chk50(15, 35));
+
+       const checkPositiveNegative = (x, y) => (x>0 && y<0) || (x<0 && y>0) ? true : false;
+        //console.log(checkPositiveNegative(2, -2));
+       //console.log(checkPositiveNegative(-5, 4));
+
+        const addPy = (str) => {
+            const strArr = str.split("");
+            if(strArr[0] === 'P' && strArr[1] === 'y'){
+                return str;
+            }else{
+                return 'Py' + str;
+            }
+        }
+        //addPy('Python')
+        //addPy('marathon')
+        //addPy('ami Taka Tr theke')
+        //addPy('khana peyeche');
+
+        const multipleOf3or7 = (num) => {
+            if(num > 0){
+                if(num%3 === 0 && num%7 === 0){
+                    console.log(`${num} is multiple of 3 & 7`);
+                }else if(num%3 === 0){
+                    console.log(`${num} is multiple of 3`);
+                }else if(num%7 === 0){
+                    console.log(`${num} is multiple of 7`);
+                }else{
+                    console.log(`${num} is not multiple of 3 & 7`);
+                }
+            }else{
+               console.log("negetive number.")
+            }
+        }
+        //multipleOf3or7(21)
+        //multipleOf3or7(-21);
+        //multipleOf3or7(15);
+        //multipleOf3or7(28);
+        //multipleOf3or7(34);
+    </script>
+</body>
+</html>
