@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 RESOURCES</title>
+</head>
+<body>
+    <script>
+        //26
+        const createString = (str) => {
+            if(str.length>=3){
+                let lastThree = str.split("").slice(-3).join("");
+                return lastThree + str + lastThree;
+            }else{
+                return str;
+            }
+        }
+
+        //27
+        const chkJava = (str) => {
+            if(str.length>=4){
+                let firstFour = str.substr(0, 4);
+                return firstFour === "Java" ;
+            }else{
+                return false;
+            }
+        }
+
+        //28
+        const isTwoInRange = (num1, num2) => (num1>=50 && num1<=99) || (num2>=50 && num2<=99);
+
+        //29
+        const isThreeInRange = (num1, num2, num3) => (num1>=50 && num1<=99) || (num2>=50 && num2<=99) || (num3>=50 && num3<=99);
+
+        //30
+        const stringIndex = (str) => {
+            const word = str.substr(4,6);
+            return word === 'Script' ? (str.substring(0, 4) + str.substring(10, str.length)) : str;
+        }
+
+        //31
+        const largestInThree = (num1, num2, num3) => {
+            let arr = [num1, num2, num3];
+            return arr.reduce((finalVal, currVal) => currVal > finalVal ? currVal : finalVal);
+        }
+
+        //32
+        const closestTo100 = (n1, n2) => {
+            let diffN1;
+            let diffN2;
+            diffN1 = n1 < 100 ? (100 - n1) : (n1 - 100);
+            diffN2 = n2 < 100 ? (100 - n2) : (n2 - 100);
+            if(diffN1 !== diffN2){
+                return diffN1 < diffN2 ? n1 : n2;
+            }else{
+                return "equal difference";
+            }
+        };
+
+        //OR
+       /* const closestToHundred = (x, y) => {
+            if(x !== y){
+                return Math.abs(x - 100) < Math.abs(y - 100) ? x : y;
+            }else{
+                return 0;
+            }
+        }*/
+
+        const closestToHundred = (x, y) => x !== y ? (Math.abs(x - 100) < Math.abs(y - 100) ? x : y) : "equal difference";
+
+        
+    </script>
+</body>
+</html>
