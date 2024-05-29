@@ -70,6 +70,22 @@
 
         const closestToHundred = (x, y) => x !== y ? (Math.abs(x - 100) < Math.abs(y - 100) ? x : y) : "equal difference";
 
+        //33
+        const numberRange = (x, y) => ((x>=40 && x<=60) && (y>=40 && y<=60)) || ((x>=70 && x<=100) && (y>=70 && y<=100));
+
+        //34
+        const largestInRange = (n1, n2) => ((n1>=40 && n1<=60) && (n2>=40 && n2<=60)) ? [n1,n2].reduce((finalVal, currVal) => currVal > finalVal ? currVal : finalVal) : "not in range";
+
+        //35
+        const charAtIndex = (str, char) =>{
+            let strArr = str.split("");
+            let strNewArr = [strArr[2], strArr[3], strArr[4]];
+            return strNewArr.includes(char);
+        }
+
+        //OR easiest way
+        const charAtIndex2To4 = (str, char) => str.substring(2, 5).includes(char);
+
         
     </script>
 </body>
