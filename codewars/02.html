@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODEWARS</title>
+</head>
+<body>
+    <script>
+        const pairString = (str) => {
+            let newArr = []
+            if(str.length%2 !== 0){
+                str += "_";
+            }
+            let strArr = str.split('');
+            for(let i = 0; i < strArr.length; i += 2){
+                newArr.push(strArr[i]+strArr[i+1])
+            }
+            return newArr;
+        }
+
+        const arrayDiff = (arr1, arr2) => {
+            const diffArr = [];
+            arr1.map((item) => !arr2.includes(item) ? diffArr.push(item) : null );
+            return diffArr;
+        }
+
+        const phoneNo = (arr) => {
+            let str = arr.join("");
+            return `(${str.substring(0,3)}) ${str.substring(3,6)}-${str.substring(6,str.length)}`;         
+        }
+        const order = (word) => {
+            if(word === ""){
+                return word;
+            }
+            return word
+            .split(" ")
+            .sort((a,b) => {
+                let numA = a.match(/\d+/)[0];
+                let numB = b.match(/\d+/)[0];
+
+                return numA - numB;
+            })
+            .join(" ")
+
+        }
+
+      
+    </script>
+</body>
+</html>
