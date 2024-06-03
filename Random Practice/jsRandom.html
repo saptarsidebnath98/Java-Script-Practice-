@@ -8,18 +8,15 @@
 </head>
 <body>
     <script>
-        const letSee = (nums) => {
-           let seen = new Set();
-           for(let num of nums){
-               if(seen.has(num)){
-                   return true
-               }
-                seen.add(num);
-
-           }
-           return false
-
+        const num = [1, 2, 3, 4]
+        const obj = {}
+        for(let item of num){
+            obj[item] = 1;
         }
+        console.log(obj);
+        
+       
+
     </script>
 </body>
 </html>
