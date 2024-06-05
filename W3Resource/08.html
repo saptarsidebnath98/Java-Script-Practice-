@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Practice</title>
+</head>
+<body>
+    <script>
+        //36
+        const chkLastDigit = (num1, num2, num3) => {
+            let lastDigitNum1 = Number(num1.toString().split("").slice(-1));
+            let lastDigitNum2 = Number(num2.toString().split("").slice(-1));
+            let lastDigitNum3 = Number(num3.toString().split("").slice(-1));
+
+            console.log(lastDigitNum1, lastDigitNum2, lastDigitNum3);
+            return lastDigitNum1 == lastDigitNum2 && lastDigitNum2 == lastDigitNum3;
+            
+        }
+
+        //easy
+        const chkLastDigitOfThree = (num1, num2, num3) => {
+            if(num1 > 0 && num2> 0 && num3> 0){
+                return num1%10 == num2%10 && num2%10 == num3%10;
+            }else{
+                return false;
+            }
+        }
+
+        //37. Write a JavaScript program to produce a new string that has the first 3 characters in lower case from a given string. If the string length is less than 3 convert all the characters to upper case.  
+
+        const convert = (str) => {
+            return str.length < 3 ? str.toUpperCase() : str.slice(0,3).toLowerCase() + str.slice(3,str.length);
+        }
+
+        /*38. Write a JavaScript program to evaluate a student's total marks across various examinations and determine their grade. The grading criteria are as follows:
+        If the total marks fall within the range of 89 to 100 (inclusive), the student receives an A+ grade.
+        If the examination is labeled as "Final-exam," the student will receive an A+ grade only if their total marks are 90 or greater. Assume that final examination means we pass 'true' as second parameter otherwise blank.
+        If the student achieves an A+ grade, the program should return 'true'; otherwise, it should return 'false'.*/
+
+        const grade = (marks, isFinalExam) => {
+            return isFinalExam ? marks >= 90 : marks>= 89 && marks <= 100 ;
+        }
+
+        //39. Write a JavaScript program to compute the sum of the two given integers. If the sum is in the range 50..80 return 65 otherwise return 80.  
+
+        const sumUnique = (n1, n2) => {
+            return (n1 + n2) >= 50 && (n1 + n2) <= 80 ? 65 : 80;
+        }
+
+        //40. Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or difference is 8.  
+        const check8 = (n1, n2) => {
+            return (n1 + n2)== 8 || Math.abs(n1 - n2)==8 || n1 == 8 || n2 == 8 ; 
+        }
+
+        //41. Write a JavaScript program to check a set of three numbers; if the three numbers are the same return 30; otherwise return 20; and if two numbers are the same return 40.  
+        const chk3 = (n1, n2, n3) => {
+            if(n1 == n2 && n2 == n3){
+                return 30;
+            }else if(n1 == n2 || n2 == n3 || n3 == n1){
+                return 40;
+            }else{
+                return 20;
+            }
+        }
+    </script>
+</body>
+</html>
