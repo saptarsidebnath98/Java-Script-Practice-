@@ -64,6 +64,79 @@
                 return 20;
             }
         }
+
+        //42. Write a JavaScript program to check whether three given numbers are increasing in strict or in soft mode.  Note: Strict mode -> 10, 15, 31 : Soft mode -> 24, 22, 31 or 22, 22, 31
+
+        const chkMode = (n1, n2, n3) => {
+            if(n2 > n1 && n3 > n2){
+                return "Strict mode";
+            }else{
+                if(n1 >= n2 && n3 > n2){
+                    return "Soft mode"
+                }
+                return "no mode"
+            }
+        }
+
+        //43.  Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit.  
+
+        const rightMostDigit = (n1, n2, n3) => {
+           let rn1 = n1.toString().slice(-1);
+           let rn2 = n2.toString().slice(-1);
+           let rn3 = n3.toString().slice(-1);
+           return rn1 == rn2 || rn2 == rn3 || rn3 == rn1;
+        }
+
+        //Write a JavaScript program that evaluates three given integers to determine if any one of them is greater than or equal to 20 and less than at least one of the other two.  
+
+        const lessThan20andOthers = (n1, n2, n3) => {
+            return (n1 >= 20 && (n1 < n2 || n1 < n3)) || (n2 >= 20 && (n2 < n1 || n2 < n3)) || (n3 >= 20 && (n3 < n2 || n3 < n1));
+        }
+
+        //45. Write a JavaScript program that checks two integer values and returns true if either one is 15 or if their sum or difference is 15.  
+
+        const chkStatusWith15 = (n1, n2) => { return n1 === 15 || n2 === 15 || n1+n2 === 15 || Math.abs(n1-n2) === 15};
+
+        //46. Write a JavaScript program to check two given non-negative integers if one (not both) is a multiple of 7 or 11. 
+
+        function valCheck(a, b) {
+            if (!((a % 7 == 0 || a % 11 == 0) && (b % 7 == 0 || b % 11 == 0))) { 
+                return ((a % 7 == 0 || a % 11 == 0) || (b % 7 == 0 || b % 11 == 0));
+            } 
+            else {
+                return false;
+            }
+        }
+
+        //47. Write a JavaScript program to check whether a given number exists in the range 40..10000.  For example 40 presents in 40 and 4000
+
+        const chkRange = (num) => {
+            return (num>= 40) && (num<=10000);
+        }
+
+        //48. Write a JavaScript program to reverse a given string.  
+
+        const reverseStr = (str) => {
+            return str.split("").reverse().join("");
+        }
+
+        //49.  Write a JavaScript program to replace every character in a given string with the character following it in the alphabet.
+
+        const replaceAllChar = (str) => {
+            return str
+            .split("")
+            .map((char) => {
+                let ascii = char.charCodeAt(0);
+                return String.fromCharCode(ascii + 1);
+            })
+            .join("");
+        }
+
+        //50. Write a JavaScript program to capitalize the first letter of each word in a given string.  
+
+        const capitalize = (str) => {
+            return str.substring(0, 1).toUpperCase() + str.substring(1, str.length).toLowerCase(); 
+        }
     </script>
 </body>
 </html>
