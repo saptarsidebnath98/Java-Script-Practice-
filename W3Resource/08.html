@@ -137,6 +137,18 @@
         const capitalize = (str) => {
             return str.substring(0, 1).toUpperCase() + str.substring(1, str.length).toLowerCase(); 
         }
+
+        const capAllStr = (val) => {
+            return val.split(" ").map((item) => capitalize(item)).join(" ");
+        }
+
+        //51. Write a JavaScript application that transforms a provided numerical value into hours and minutes.  
+
+        const cnvrtTime = (time) => {
+            let hours = Math.floor(time /60);
+            let minute = time % 60;
+            return `${hours} hrs. : ${minute} mins.`;
+        }
     </script>
 </body>
 </html>
