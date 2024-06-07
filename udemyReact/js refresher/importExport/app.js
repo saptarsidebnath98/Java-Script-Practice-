@@ -11,7 +11,7 @@
 // console.log(infos.apikey);
 
 import { apikey, email as officialEmail } from "./script.js";
-console.log(officialEmail);
+// console.log(officialEmail);
 
 // const objs = arr.map((item) => ({text: item}));
 // console.log(objs);
@@ -30,9 +30,17 @@ const user = {
     name: "Vinod",
     manager: "Bhusan"
 }
-
 const printUserDetails = ({name, manager}) => {
     return `name: ${name}, manager name: ${manager}`;
 }
+//console.log(printUserDetails(user));
 
-console.log(printUserDetails(user));
+//func in other func:
+function init(){
+    function greet(){
+        console.log("Hola amigos...");
+    }
+
+    greet();
+}
+init();
