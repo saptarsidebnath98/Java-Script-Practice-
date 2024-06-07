@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        const getName = (value) => {
+            return new Promise((res, rej)=> {
+                if(value){
+                    res(value);
+                }else{
+                    rej("No value!!!");
+                }
+            }).then((res)=> {
+                return res;
+            }).catch((err) => {
+                return err;
+            })
+        }
+        
+        console.log(getName(""));
+    </script>
+</body>
+</html>
