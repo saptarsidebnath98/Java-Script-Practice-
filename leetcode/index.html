@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS PRACTICE</title>
+  </head>
+  <body>
+    <script>
+      var createCounter = (n) => {
+        return () => {
+          return n++;
+        };
+      };
+      const counter = createCounter(10);
+    // console.log(counter());
+    // console.log(counter());
+    // console.log(counter()); 
+   
+   var expect = function(val) {
+       return{
+           toBe: (num)=> {
+               if(val === num){
+                   return true;
+               }else{
+                   throw new Error("Not Equal");
+               }
+           },
+           notToBe: (num) => {
+               if(val !== num){
+                   return true;
+               }else{
+                   throw new Error("Equal");
+               }
+           }
+       }
+    };
+
+    //Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.
+    var createCounter = function(init) {
+        let currVal = init;
+        return {
+            increment: ()=> {
+                currVal += 1;
+                return currVal;
+            },
+            decrement: ()=> {
+                currVal -= 1;
+                return currVal;
+            },
+            reset: ()=> {
+                currVal = init
+                return currVal;
+            }
+        }
+    };
+    //
+    var map = function(arr, fn) {
+        let newArr = [];
+        for(let i = 0; i < arr.length; i++){
+            let newElm = fn(arr[i]);
+            newArr.push(newElm);
+        }
+        return newArr;
+    };
+    //
+    var filter = function(arr, fn) {
+        let newArr = [];
+        for(let i = 0; i < arr.length; i++){
+            if(fn(arr[i],i) == true){
+                newArr.push(arr[i]);
+            }
+        }
+        return newArr;
+    }
+
+
+    </script>
+  </body>
+</html>
