@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 RESOURCE</title>
+</head>
+<body>
+    <h3>Check the console</h3>
+    <script>
+        //52. Write a JavaScript program to convert letters of a given string alphabetically.
+        const cnvrtStr = (str) => {
+            return str.split("").sort().join("");
+        }
+
+        //53. Write a JavaScript program to check whether the characters a and b are separated by exactly 3 places anywhere (at least once) in a given string. 
+        const chk3gap = (str) => {
+            return (/a...b/).test(str) || (/b...a/).test(str);
+        } 
+
+        //54. Write a JavaScript program to count the number of vowels in a given string.
+        
+        const chkVowel = (word) => {
+            let count = 0;
+            const vowel = ["a", "e", "i", "o", "u"];
+            word = word.toLowerCase().split("");
+            for(let letter of word){
+                if(vowel.includes(letter)){
+                    count += 1
+                }
+            }
+            return count;
+        }
+
+        //55. Write a JavaScript program to check whether a given string contains an equal number of p's and t's.  
+        const countLetter = (str) => {
+            const strArr = str.toLowerCase().split("");
+            let countP = strArr.filter((ltr)=> ltr === 'p').length;
+            let countT = strArr.filter((ltr)=> ltr === 't').length;
+            return countP == countT;
+        }
+
+        //56. Write a JavaScript program to divide two positive numbers and return the result as string with properly formatted commas.
+
+        //57. Write a JavaScript program to create one string of specified copies (positive numbers) of a given string.
+        const copyStr = (str, n) => {
+            let finalStr = "";
+            for(let i = 0; i< n; i++){
+                finalStr += str;
+            }
+            return finalStr;
+        }
+
+        //easy
+        const repeatStr = (str, n) => {
+            if(n<0){
+                return false;
+            }else{
+                return str.repeat(n);
+            }
+        }
+
+        //58. Write a JavaScript program to create an updated string of 4 copies of the last 3 characters of a given original string. The string length must be 3 and above.  
+        const last3Repeat = (str) => {
+            if(str.length<3){
+                return false;
+            }else{
+                let subStr = str.substr(-3);
+                return subStr.repeat(4);
+            }
+        }
+
+        //59. Write a JavaScript program to extract the first half of a even string.  
+        const halfString = (str) => {
+            if(str.length%2 === 0){
+                return str.substring(0, str.length/2);
+            }else{
+                return "odd string length";
+            }
+        }
+
+        //60. Write a JavaScript program to create a new string without the first and last characters of a given string. 
+        const removeFirstLastLtr = (str) => {
+            return str.length>=3 ? str.substring(1, str.length - 1) : null;
+        } 
+    </script>
+</body>
+</html>
