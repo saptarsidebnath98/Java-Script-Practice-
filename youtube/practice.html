@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YTS Js practice</title>
+</head>
+<body>
+    <p>Check the console</p>
+    <script>
+        //find the duplicates of a given array;
+        const findDuplicates = (arr) => {
+           const duplicate = arr.filter((ele, index, arr) => arr.indexOf(ele) !== index);
+           console.log(duplicate);
+        }
+
+        //🤣🤣🤣😂i thouht this big for an easy problem
+        const findDistict = (arr) => {
+            const distinctSet = new Set();
+            if(arr.length > 0){
+                for(let item of arr){
+                    !distinctSet.has(item) && distinctSet.add(item);
+                }
+                return distinctSet;
+            }else{
+                return "array must contain value."
+            }
+        }
+
+        //easy way
+        const findDistinctVal = (arr) => [...new Set(arr)];
+
+        //max/ min ------
+        const maxVal = (arr) => arr.reduce((finalVal, currVal) => finalVal > currVal ? finalVal : currVal);
+        const minVal = (arr) => arr.reduce((finalVal, currVal) => finalVal < currVal ? finalVal : currVal);
+
+        const secondlargest = (arr) => {
+            const uniqueArr = [...new Set(arr)];
+            uniqueArr.sort((a, b) => b - a);
+            return uniqueArr.length <2 ? null : uniqueArr[1];
+        }
+    </script>
+</body>
+</html>
