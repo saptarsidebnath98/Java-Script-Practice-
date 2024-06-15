@@ -17,6 +17,10 @@
          const lastThreeChar = (str) => {
              return str.length >= 3 ? str.substr(-3) + str.substring(0, str.length -3) : false;
          }
+         //OR
+         const lastThreeCharAnother = (str) => {
+            return str.length >= 3 ? str.slice(-3) + str.slice(0, -3) : false;
+        }
      </script>
 </body>
 </html>
