@@ -31,6 +31,15 @@
             }
         }
 
+       //64. Write a JavaScript program to concatenate two strings and return the result. If the length of the strings does not match, then remove the characters from the longer string. 
+
+       const twoStrMatch = (str1, str2) => {
+           if(str1.length !== str2.length){
+               return str1.length > str2.length ? str1.slice(0, str2.length) : str2.slice(0, str1.length)
+           }
+           return str1 + str2;
+       }
+
      </script>
 </body>
 </html>
