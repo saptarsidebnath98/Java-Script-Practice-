@@ -49,6 +49,8 @@
        const endScript = (str) => {
            if(str.length >= 6){
                return str.substr(-6) === "Script";
+           }else{
+               return false;
            }
        }
 
