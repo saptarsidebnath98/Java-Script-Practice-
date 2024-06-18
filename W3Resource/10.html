@@ -66,6 +66,16 @@
            }
        }
 
+       //67. Write a JavaScript program to create a new string from a given string. This program removes the first and last characters of the string if the first or last character is 'P'. Return the original string if the condition is not satisfied.
+
+       const removeChar = (str) => {
+        if(str.length >= 2){
+            return str.toLowerCase().substring(0, 1) === str.toLowerCase().substr(-1) ? str.substring(1, str.length - 1) : str;
+        }else{
+            return str;
+        }
+       }
+
      </script>
 </body>
 </html>
