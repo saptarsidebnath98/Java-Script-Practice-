@@ -54,6 +54,18 @@
            }
        }
 
+       //66. Write a JavaScript program to display the city name if the string begins with "Los" or "New" otherwise return blank. 
+
+       const showCityName = (str) => {
+           if(str.length >= 3){
+               let firstThreeChar = str.substring(0, 3);
+               return firstThreeChar === "Los" || firstThreeChar === "New" ? str : false;
+           }else{
+
+               return false;
+           }
+       }
+
      </script>
 </body>
 </html>
