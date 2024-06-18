@@ -81,6 +81,26 @@
        const nCharString = (str, n) => {
            return str.substr(0, n) + str.substr(-n);
        }
-     </script>
+
+       //69. Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3. 
+
+       const sumArray = (arr) => {
+           if(arr.length === 3){
+               return arr.reduce((total, currItem) => total + currItem, 0);
+           }else{
+               return arr;
+           }
+       }
+
+       //70. Write a JavaScript program to rotate the elements left in a given array of integers of length 3.
+
+       const rotateLeft = (arr) => {
+           if(arr.length === 3){
+               return [arr[1], arr[2], arr[0]];
+           }else{
+               return false;
+           }
+       }
+      </script>
 </body>
 </html>
