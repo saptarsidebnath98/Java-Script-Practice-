@@ -26,7 +26,8 @@
         //try-catch
         function reverseString(s) {
             try{
-                return s.split("").reverse().join("");
+                let reversed = s.split("").reverse().join("");
+                console.log(reversed);
             }
             catch(err){
                 console.log(err.message);
