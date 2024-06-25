@@ -56,6 +56,12 @@
             return [...middle1, ...middle2];
         }
 
+        //76. Write a JavaScript program to create an array by taking the first and last elements from a given array of integers. The length must be larger than or equal to 1.  
+
+        const firstLastElmArr = (arr) => {
+            return arr.filter((item, index, arr) => index===0 || index=== arr.length-1);
+        }
+
     </script>
 </body>
 </html>
