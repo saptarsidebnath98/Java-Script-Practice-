@@ -48,6 +48,14 @@
             return newArr;
         }
 
+        //75. Write a JavaScript program to create an array taking the middle elements of the two arrays of integer and each length 3. 
+
+        const makeArr = (arr1, arr2) => {
+            const middle1 = arr1.slice(1, arr1.length-1);
+            const middle2 = arr2.slice(1, arr2.length-1);
+            return [...middle1, ...middle2];
+        }
+
     </script>
 </body>
 </html>
