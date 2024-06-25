@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackerank</title>
+</head>
+<body>
+    <h2>Hackerank Problem</h2>
+    <p>Check the console...</p>
+    <script>
+        //10 Days of JS
+        //get secondLargest Number
+        function getSecondLargest(nums) {
+            // Complete the function
+            function findLargest(arr){
+                return arr.reduce((final, curr) => final > curr ? final : curr);
+            }
+            const largestNum = findLargest(nums);
+            const newArr = nums.filter((item) => item !== largestNum);
+            const secondLargestNum = findLargest(newArr);
+            return secondLargestNum;
+        }
+
+        //try-catch
+        function reverseString(s) {
+            try{
+                return s.split("").reverse().join("");
+            }
+            catch(err){
+                console.log(err.message);
+                console.log(s); 
+            }
+        }
+    </script>
+</body>
+</html>
