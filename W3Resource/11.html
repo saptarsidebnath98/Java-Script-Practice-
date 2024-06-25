@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+</head>
+<body>
+    <h2>Check the console...</h2>
+    <script>
+        //72. Write a JavaScript program to check whether the first and last elements are the same in a given array of integers of length 3.  
+
+        const checkArray = (arr) => {
+            if(arr.length === 3){
+                return arr[0] === arr[2]
+            }
+            return false;
+        }
+
+        //73. Write a JavaScript program to reverse the elements of a given array of integers of length 3.  
+
+        const reverseArray = (arr) => {
+
+            if(arr.length === 3){
+                return arr.reverse();
+            }
+            return false;
+        }
+
+        //or
+        const reverseArray2 = (arr) => {
+            return arr.map((item, index, arr) => arr[(arr.length - 1) - index]);
+        }
+
+    </script>
+</body>
+</html>
