@@ -8,15 +8,45 @@
 </head>
 <body>
     <script>
-        let a = 100;
+       /* let a = 100;
         {
             let a = 10;
             let b = 20;
             console.log(a);
             console.log(b);
         }
-        console.log(a);
+        console.log(a); */
 
+        //function statement or function declaration
+         function a(){
+             console.log("a called");
+         }
+        a();
+
+        //function expression
+        const b = function (){
+            console.log("b called");
+        }
+        b();
+
+        //Anonymous function
+        //function (){
+            
+       // }
+
+       //Named function expression
+       //-->Anonymus function with a name
+
+       //parameters vs arguments
+       const c = function (parameter1, parameter2){
+        console.log("c called", parameter1, parameter2);
+        }
+        c(1 , 2); //this 1 and 2 is called arguments
+
+        //First Class Functions or First Class Citizens
+        //Functions to be used as values, can be passed as an argument to another functions, can be returned from the other functions, to be assigned in varibles, all this abilities are known as first class functions.
+
+        //Arrow functions
     </script>
 </body>
 </html>
