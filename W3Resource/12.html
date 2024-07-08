@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 Resourse</title>
+</head>
+<body>
+    console check
+    <script>
+        //81. Write a JavaScript program to add two digits to a given positive integer of length two. 
+        const addDigit = (num) => {
+            const numArr = num.toString().split("");
+            return numArr.reduce((total, currVal) => total + Number(currVal), 0);
+        }
+
+        //82. Write a JavaScript program to add two positive integers without carrying.
+        const addDigitsWithoutCarrying = (num1, num2) => {
+
+        }
+
+        //83. Write a JavaScript program to find the longest string from a given array of strings.
+        const longStr = (arr) => {
+            return arr.reduce((finalVal, currVal) => {
+                return finalVal.length > currVal.length ? finalVal : currVal;
+            })
+        }
+
+        //84. Write a JavaScript program to replace each character in a given string with the next in the English alphabet.
+        const nextAlpha = (str) => {
+            const charCodeArr =  str.split("").map((item) => {
+                return item === "z" ? "a".charCodeAt(0) : item.charCodeAt(0) + 1
+            });
+            return charCodeArr.map((item) => String.fromCharCode(item)).join("");
+        }
+        //85. Write a JavaScript program to divide a given array of positive integers into two parts. First element belongs to the first part, second element belongs to the second part, and third element belongs to the first part and so on. Now compute the sum of two parts and store it in an array of size two. 
+        const twoArrSum = (arr)=> {
+            const summArr = (arr) => {
+                return arr.reduce((total, curr) => total + curr , 0);
+            }
+            const arr1 = arr.filter((item, index) => index%2 === 0);
+            const arr2 = arr.filter((item, index) => index%2 !== 0);
+            return new Array(summArr(arr1), summArr(arr2));
+
+        }
+    </script>
+</body>
+</html>
