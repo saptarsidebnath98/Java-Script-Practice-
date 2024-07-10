@@ -82,6 +82,21 @@
         return avgArr.length> 0 && avgArr.reduce((final, curr) => final <= curr ? final : curr);
     };
      console.log(minimumAverage([7,8,3,4,15,13,4,1]));
+
+     //2535. Difference Between Element Sum and Digit Sum of an Array
+     var differenceOfSum = function(nums) {
+        const elementSum = nums.reduce((total, curr) => total + curr, 0);
+        let digitSum = 0;
+        nums.forEach((number) => {
+            let numArr = number.toString().split("");
+            let result = numArr.reduce((total, curr) => parseInt(total) + parseInt(curr), 0)
+            digitSum += result;
+            return digitSum;
+        })
+        return Math.abs((elementSum - digitSum))
+    };
     </script>
+
+    
 </body>
 </html>
