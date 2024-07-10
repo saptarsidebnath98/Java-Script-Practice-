@@ -36,6 +36,35 @@
             const aLength = args.length;
             return aLength;
         };
+
+        var numberGame = function(nums) {
+            function getMin(arr){
+                if(arr.length > 0){
+                    return arr.reduce((final, curr) => final <= curr ? final : curr);
+                }
+                
+            };
+             function filterMin(minVal, arr){
+                 const index = arr.indexOf(minVal);
+                 if(index > -1){
+                     arr.splice(index, 1)
+                 }
+                return arr;
+             }
+             let target = [];
+             let dupNums = [...nums];
+        
+             for(let i=0; i < nums.length/2; i++){
+                    let min1 = getMin(dupNums);
+                    dupNums = filterMin(min1, dupNums);
+                    let min2 = getMin(dupNums);
+                    dupNums = filterMin(min2, dupNums);
+                    target.push(min2, min1);
+             }
+             return target;
+        };
+
+        console.log(numberGame([1,2,3,4]));
     </script>
 </body>
 </html>
