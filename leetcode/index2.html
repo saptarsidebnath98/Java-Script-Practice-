@@ -64,7 +64,24 @@
              return target;
         };
 
-        console.log(numberGame([1,2,3,4]));
+       // console.log(numberGame([1,2,3,4]));
+
+       var minimumAverage = function(nums) {
+        nums.sort((a, b) => a - b);
+        let avgArr = [];
+        while(nums.length > 0){
+            let minVal = nums.shift();
+            let maxVal = nums.pop();
+            let avg = (minVal + maxVal) / 2;
+            avgArr.push(avg);
+            //console.log("nums: " + nums);
+            //console.log("minVal: " + minVal);
+           // console.log("maxVal: " + maxVal);
+           // console.log("avg: " + avg);
+        }
+        return avgArr.length> 0 && avgArr.reduce((final, curr) => final <= curr ? final : curr);
+    };
+     console.log(minimumAverage([7,8,3,4,15,13,4,1]));
     </script>
 </body>
 </html>
