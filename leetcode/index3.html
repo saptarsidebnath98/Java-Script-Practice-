@@ -31,6 +31,27 @@
             nums.sort((a, b) => b - a);
             return (nums[0]-1)*(nums[1]-1);
         };
+
+        var diagonalSum = function(mat) {
+            let primary = [];
+            let secondary = [];
+            for(let i = 0; i < mat.length ; i++){
+                    let j = i;
+                    primary.push(mat[i][j])
+                }
+            for(let i = 0; i < mat.length ; i++){
+                    let j = (mat[i].length - 1) - i;
+                    if(mat.length%2 !== 0){
+                        if( j!== i){
+                            secondary.push(mat[i][j])
+                        }
+                    }else if(mat.length%2 === 0){
+                        secondary.push(mat[i][j])
+                    }
+            }
+            
+            return [...primary, ...secondary].reduce((total, curr) => total + curr, 0);
+        };
     </script>
 </body>
 </html>
