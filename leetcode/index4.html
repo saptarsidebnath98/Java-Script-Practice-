@@ -70,6 +70,12 @@
             }
             return result;
         };
+
+        var sortPeople = function(names, heights) {
+            let people = names.map((name, index) => ({name, height: heights[index]}));
+            people.sort((a, b) => b.height - a.height);
+            return people;
+        };
     </script>
 </body>
 </html>
