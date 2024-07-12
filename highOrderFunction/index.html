@@ -57,7 +57,19 @@
             return acc;
     }, {});
 
-    console.log(output);
+    //console.log(output);
+
+    const output2 = users.filter((item) => item.age > 22).map(item => item.fname);
+    //console.log(output2);
+
+    const output3 = users.reduce((acc, curr) => {
+        if(curr.age > 22){
+            acc.push(curr.fname);
+        }
+        return acc;
+    }, [])
+
+    console.log(output3);
     </script>
 </body>
 </html>
