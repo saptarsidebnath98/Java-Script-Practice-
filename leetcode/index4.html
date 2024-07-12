@@ -58,6 +58,18 @@
             }
             return total;
         };
+
+        var heightChecker = function(heights) {
+            let result = 0;
+            const dupHeights = [...heights];
+            const expHeight = dupHeights.sort((a, b) => a - b);
+            for(let i = 0; i < heights.length; i++){
+                if(heights[i] !== expHeight[i]){
+                    result += 1;
+                }
+            }
+            return result;
+        };
     </script>
 </body>
 </html>
