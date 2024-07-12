@@ -21,6 +21,13 @@
             }
             return findHighest(target);
         };
+
+        var flipAndInvertImage = function(image) {
+            function flipInvert(arr){
+                return arr.reverse().map((item) => item == 1 ? 0 : 1)
+            };
+            return image.map((elem) => flipInvert(elem));
+        };
     </script>
 </body>
 </html>
