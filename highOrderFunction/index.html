@@ -18,17 +18,46 @@
             return 2 * Math.PI * radius;
         }
 
-        function calculate(radius, logic){
+        const diameter = (radius) => {
+            return 2 * radius;
+        }
+
+        /*function calculate(radius, logic){
             const output = [];
             for(let rad of radius){
                 output.push(logic(rad))
             }
             return output;
+        }*/
+
+        function calculate(arr, logic){
+            return arr.map(logic);
         }
 
-        console.log(calculate(radius, area));
+        //console.log(calculate(radius, area));
 
-        console.log(calculate(radius, circumference));
+        //console.log(calculate(radius, circumference));
+
+        //console.log(calculate(radius, diameter));
+
+        const users = [
+        {fname: "Sap" , lname: "Deb", age: 25},
+        {fname: "Sud" , lname: "Bhow", age: 22},
+        {fname: "Ani" , lname: "Das", age: 25},
+        ]
+
+        //find age and user count of those ages:
+
+        const output = users.reduce((acc, curr) => {
+            if(acc[curr.age]){
+                acc[curr.age] += 1;
+            }else{
+                acc[curr.age] = 1;
+            }
+            return acc;
+    }, {});
+
+    console.log(output);
     </script>
 </body>
 </html>
