@@ -105,10 +105,26 @@
     }
 
     const sayHello = greeting("Hello");
-    console.log(sayHello("Unfair life"));
+    //console.log(sayHello("Unfair life"));
 
     const sayBye = greeting("Bye");
-    console.log(sayBye("Fear"));
+   // console.log(sayBye("Fear"));
+
+    function doSomething() {
+        console.log(this);
+      }
+         
+     // doSomething();
+
+     const a = (num) => {
+         return num / 2
+     }
+
+     const divide = (num1, num2, operation) => {
+         return operation(num1 + num2);
+     }
+
+     //console.log(divide(1 , 2, a)); a is callback operation here  
     
     </script>
 </body>
