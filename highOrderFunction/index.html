@@ -95,6 +95,20 @@
         }
         return count;
     };
+
+
+    /////////////////////////returns a function////////////////////////
+    function greeting(greet){
+        return function(name){
+            return `${greet}, ${name}.`;
+        }
+    }
+
+    const sayHello = greeting("Hello");
+    console.log(sayHello("Unfair life"));
+
+    const sayBye = greeting("Bye");
+    console.log(sayBye("Fear"));
     
     </script>
 </body>
