@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leetcode Practice</title>
+</head>
+<body>
+    console check
+    <script>
+        var subsetXORSum = function(nums) {
+            let sum = nums.length > 0 ? nums.reduce((total, curr) => total + curr, 0) : 0;
+            console.log("sume before loop ", sum);
+            for(let i = 0; i < nums.length ; i ++){
+                for(let j = i + 1; j < nums.length ; j ++){
+                    sum += nums[i] ^ nums[j];
+                    console.log(nums[i], nums[j]); 
+                }
+            }
+            console.log("sume after loop ", sum);
+            if(nums.length > 2){
+            sum += nums.reduce((total, curr) => total ^ curr);
+            }
+            return "final sum: " + sum;
+        };
+    </script>
+</body>
+</html>
