@@ -42,5 +42,12 @@ function chkFail(arr){
     return arr.some((item) => item.marks < 25)
     
 }
+
+function cap(arr){
+    return arr.map((item) => item.name.toUpperCase());
+}
+
+console.log(cap([{name: "pk", age: 30}, {name: "ranit", age: "15"}]));
+
         
     
