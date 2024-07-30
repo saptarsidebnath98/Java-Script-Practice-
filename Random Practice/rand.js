@@ -35,5 +35,12 @@ function rotation(n, arr){
     }
     return arr;
 }
+
+const arr2 = [{id: 31, marks: 66},{id: 11, marks: 90},{id: 25, marks: 24}, {id: 89, marks: 10}, {id: 52, marks: 15}]
+
+function chkFail(arr){
+    return arr.some((item) => item.marks < 25)
+    
+}
         
     
