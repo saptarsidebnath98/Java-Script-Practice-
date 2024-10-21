@@ -1,8 +1,8 @@
 const names = ["David", "Ramid", "Cbum", "Dino"];
 
-display = document.querySelector('h1');
-btn = document.querySelector('button');
-p = document.querySelector('p');
+const display = document.querySelector('h1');
+const btn = document.querySelector('button');
+const p = document.querySelector('p');
 
 p.textContent = "pk is the boss"
 let index = 0;

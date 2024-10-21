@@ -1,0 +1,35 @@
+* {
+  margin: 0%;
+}
+
+#root {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+}
+
+.container {
+  color: #fff;
+  background-color: #000;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 50%;
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+}
+
+button {
+  cursor: pointer;
+  max-width: 50px;
+}
+
+img {
+  width: 100%;
+}
+
+strong {
+  color: #ff0;
+}
+/*# sourceMappingURL=index.c41b5a0e.css.map */

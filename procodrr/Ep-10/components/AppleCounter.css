@@ -1,0 +1,30 @@
+* {
+  margin: 0%;
+}
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+.container {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: black;
+  color: white;
+  margin-top: 20px;
+  padding: 20px;
+}
+button {
+  max-width: 50px;
+  cursor: pointer;
+}
+img {
+  width: 100%;
+}
+strong{
+    color: yellow;
+}
